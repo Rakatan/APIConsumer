@@ -5,6 +5,9 @@ public class APIEnvelope<T> {
 
     private ApiError error;
 
+    public APIEnvelope() {
+    }
+
     public APIEnvelope(T response, ApiError error) {
         this.response = response;
         this.error = error;

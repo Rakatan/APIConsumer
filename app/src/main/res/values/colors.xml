@@ -11,4 +11,5 @@
     <color name="primaryUserDetails">#1897A6</color>
     <color name="primaryDarkUserDetails">#0D6063</color>
     <color name="accentUserDetails">#1897A6</color>
+    <color name="darkestGrey">#999</color>
 </resources>

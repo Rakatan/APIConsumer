@@ -1,6 +1,6 @@
 package com.rakatan.apiconsumer.web;
 
-class ApiError {
+public class ApiError {
     private int resultCode;
     private String errorMessage;
 

@@ -1,5 +1,6 @@
 package com.rakatan.apiconsumer.ui.adapters;
 
+import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,14 +17,16 @@ import java.util.ArrayList;
 public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
     ArrayList<User> users;
     private UsersAdapter.Inputs inputs;
+    private Context context;
 
     public interface Inputs {
         void userClicked(User user);
     }
 
-    public UsersAdapter(UsersAdapter.Inputs inputs) {
+    public UsersAdapter(UsersAdapter.Inputs inputs, Context context) {
         this.users = new ArrayList<>();
         this.inputs = inputs;
+        this.context = context;
     }
 
     @Override
@@ -33,17 +36,28 @@ public class UsersAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-//        holder.bind(users.get(position));
+        holder.bind(users.get(position), context);
     }
 
     @Override
     public int getItemCount() {
-//        return users.size();
-        return 20;
+        return users.size();
     }
 
     private View inflateView(final @NonNull ViewGroup viewGroup, final @LayoutRes int viewRes) {
         final LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
         return layoutInflater.inflate(viewRes, viewGroup, false);
+    }
+
+    public void refreshUsers(ArrayList<User> users) {
+        this.users.clear();
+        this.users.addAll(users);
+        notifyDataSetChanged();
+    }
+
+    public void addUsers(ArrayList<User> newUsers) {
+        int initialUsers = users.size();
+        users.addAll(newUsers);
+        notifyItemRangeInserted(initialUsers, users.size());
     }
 }
