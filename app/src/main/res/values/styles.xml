@@ -1,20 +1,35 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="APIConsumer" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="APIConsumer.Users" parent="APIConsumer">
+        <item name="colorPrimary">@color/primaryUsers</item>
+        <item name="colorPrimaryDark">@color/primaryDarkUsers</item>
+        <item name="colorAccent">@color/accentUsers</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="APIConsumer.UserDetails" parent="APIConsumer">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/primaryUserDetails</item>
+        <item name="colorPrimaryDark">@color/primaryDarkUserDetails</item>
+        <item name="colorAccent">@color/accentUserDetails</item>
+    </style>
+
+    <style name="APIConsumer.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="APIConsumer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="APIConsumer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
